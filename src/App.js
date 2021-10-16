@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
-
+import Investor from "./components/Investor"
+import Waitlist from "./components/Waitlist"
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+  return ( 
+  <Router>
+    <div>
+      <Switch>
+        <Route exact path="/waitlist">
+          <Waitlist />
+        </Route>
+        <Route exact path="/">
+          {/* <div className="container-fluid"> */}
+           <Investor/>
+          {/* </div> */}
+        </Route>
+      </Switch>
     </div>
+  </Router>
   );
 }
 
